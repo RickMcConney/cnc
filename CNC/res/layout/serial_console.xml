@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toplayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cyan" >
+
+    <TextView
+        android:id="@+id/demoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/app_title"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_below="@+id/demoTitle"
+        android:background="#eeeeee" />
+ 
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/separator"
+        android:layout_toLeftOf="@+id/mode"
+        android:ems="10" >
+
+    </EditText>
+    
+    <com.elmkom.grbl.cnc.MyGLSurfaceView
+        android:id="@+id/glSurfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/mode" >
+
+    </com.elmkom.grbl.cnc.MyGLSurfaceView> 
+<!-- 
+    <ScrollView
+        android:id="@+id/demoScroller"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText1"
+        android:background="#3f3f3f" >
+
+        <TextView
+            android:id="@+id/consoleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3f3f3f"
+            android:textIsSelectable="true"
+            android:typeface="monospace" />
+    </ScrollView>
+ -->
+
+    <ImageButton
+        android:id="@+id/plusx"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/plusy"
+        android:layout_marginTop="32dp"
+        android:layout_toRightOf="@+id/plusy"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:background="@drawable/selector"        
+        android:scaleType="fitXY"
+        android:src="@drawable/plusx" />
+
+    <ImageButton
+        android:id="@+id/plusz"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/minz"
+        android:layout_alignTop="@+id/plusy"
+        android:background="@drawable/selector"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/plusz" />
+
+    <ImageButton
+        android:id="@+id/zero"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/selector"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/zero" />
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/zero"
+        android:background="@drawable/selector"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/home" />
+
+    <ImageButton
+        android:id="@+id/run"
+        android:layout_width="48dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/alarm"
+        android:background="@drawable/selector"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/play" />
+
+    <ImageButton
+        android:id="@+id/minx"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/plusx"
+        android:background="@drawable/selector"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/minx" />
+
+    <ImageButton
+        android:id="@+id/miny"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/minx"
+        android:background="@drawable/selector"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/miny" />
+
+    <ImageButton
+        android:id="@+id/plusy"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/miny"
+        android:layout_alignLeft="@+id/miny"
+        android:background="@drawable/selector"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/plusy" />
+
+    <ImageButton
+        android:id="@+id/mode"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/separator"
+        android:background="@drawable/selector"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/scale" />
+
+    <ImageButton
+        android:id="@+id/minz"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/plusx"
+        android:background="@drawable/selector"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/minz" />
+
+    <ImageButton
+        android:id="@+id/alarm"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/zero"
+        android:layout_toLeftOf="@+id/zero"
+        android:background="@drawable/selector"
+        android:onClick="button_click"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/alarm" />
+
+</RelativeLayout>
